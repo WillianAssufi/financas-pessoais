@@ -24,7 +24,6 @@ def verificar_senha(senha: str, senha_hash: str) -> bool:
 
     return checkpw(senha_bytes_usuario, senha_bytes_banco)
 
-
 def criar_token(usuario_id: int) -> str:
     expiracao = datetime.now(timezone.utc) + timedelta(minutes=60)
     payload = {"sub": str(usuario_id), "exp": expiracao}
